@@ -38,7 +38,7 @@ ERROR_REASON_FAILURE        = 0x04 # e.q. on malloc() failure
 ERROR_REASON_UNDEFINED      = 0x05
 
 # Session feature flags
-FEATURE_UNIQUE_SESSION_ID = 1 << 0
+FEATURE_UNIQUE_SESSION_ID = 0 << 0
 FEATURES_MASK = FEATURE_UNIQUE_SESSION_ID
 
 # Limit types.
