@@ -18,6 +18,32 @@ Opkg (OpenWrt) packages for both Tunneldigger client and broker are available at
 
 https://github.com/wlanslovenija/firmware-packages-opkg
 
+Modifications for Freifunk
+--------------------------
+
+broker/src/tunneldigger_broker/protocol.py 
+  FEATURE_UNIQUE_SESSION_ID = 0 << 0
+
+added scripts:
+(based on https://forum.freifunk.net/t/l2tp-tunneldigger-serverdoku-thread/11621)
+  scripts/session-pre-down.sh
+  scripts/session-up.sh*    
+  start-broker.sh 
+  tunneldigger.service (copy to /etc/systemd/system/tunneldigger.service)
+
+Setup:
+  Port: 10042
+  MTU: 1364
+
+install debian:
+  http://tunneldigger.readthedocs.io/en/latest/server.html#installation 
+  change paths in start-broker.sh
+                  scripts/session-up.sh
+                  tunneldigger.service
+                  broker/l2tp_broker.cfg
+  systemctl reload tunneldigger.service
+  systemctl start tunneldigger.service
+
 Source Code, Issue Tracker and Mailing List
 -------------------------------------------
 
