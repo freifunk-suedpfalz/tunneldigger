@@ -26,9 +26,13 @@ broker/src/tunneldigger_broker/protocol.py
 
 added scripts:
 (based on https://forum.freifunk.net/t/l2tp-tunneldigger-serverdoku-thread/11621)
+
   scripts/session-pre-down.sh
-  scripts/session-up.sh*    
-  start-broker.sh 
+
+  scripts/session-up.sh
+
+  start-broker.sh
+
   tunneldigger.service (copy to /etc/systemd/system/tunneldigger.service)
 
 Setup:
@@ -36,12 +40,18 @@ Setup:
   MTU: 1364
 
 install debian:
-  http://tunneldigger.readthedocs.io/en/latest/server.html#installation 
+http://tunneldigger.readthedocs.io/en/latest/server.html#installation 
+
   change paths in start-broker.sh
+  
                   scripts/session-up.sh
+                  
                   tunneldigger.service
+                  
                   broker/l2tp_broker.cfg
+                  
   systemctl reload tunneldigger.service
+  
   systemctl start tunneldigger.service
 
 Source Code, Issue Tracker and Mailing List
